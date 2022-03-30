@@ -10,7 +10,7 @@ projects = json.load(f)
 # Iterating through the json
 # list
 for i in projects['projects']:
-    print(i)
+    print(i) #prints in the console
 
 # Closing file
 f.close()

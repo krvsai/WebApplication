@@ -1,56 +1,48 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-<head>
-  <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
-  <title>My Project</title>
-  <title>Add Project</title>
-  <style>
-*{
-  box-sizing: border-box;
-}
-
-/* Create two equal columns that floats next to each other */
-.addProject {
-  float: left;
-  width: 50%;
-  padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
-}
-
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-</style>
-</head>
-<body>
-{% extends "template.html" %}
-{% block content %}
-
-<h1> Add a new project </h1>
-
-<div class="row">
-  <div class="addProject" style="background-color:#aaa;">
-    <form>
-      <label for="projectName">Project Name:</label><br>
-      <input type="text" id="projectName" name="projectName" required="required" maxlength="50" size="50"><br>
-      <label for="projectDetails">Project Details:</label><br>
-      <input type="text" id="projectDetails" name="projectDetails" required="required" maxlength="300" size="100"><br>
-      <label for="projectDetails">Project Tools:</label><br>
-      <input type="text" id="projectTools" name="projectTools" required="required" maxlength="100" size="100"><br>
-      <hr size ="10">
-      <input type="submit" value="Add Project">
-    </form>
-  </div>
-</div>
-
-
-{% endblock %}
-</body>
+  <head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Project</title>
+    <title>Add Project</title>
+    <style>
+      *{
+          box-sizing: border-box;
+      }
+      /* Create two equal columns that floats next to each other */
+      .addProject {
+          float: left;
+          width: 50%;
+          padding: 10px;
+          height: 300px; /* Should be removed. Only for demonstration */
+      }
+      /* Clear floats after the columns */
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+      }
+  </style>
+  </head>
+    <body>
+      {% extends "template.html" %}
+      {% block content %}
+      <h1> Add a new project </h1>
+      <div class="row">
+        <div class="addProject" style="background-color:#aaa;">
+          <form action = "/addproject.py" method = "get">
+            <label for="projectName">Project Name:</label><br>
+            <input type="text" id="projectName" name="projectName" required="required" maxlength="50" size="50"><br>
+            <label for="projectDetails">Project Details:</label><br>
+            <input type="text" id="projectDetails" name="projectDetails" required="required" maxlength="300" size="100"><br>
+            <label for="projectDetails">Project Tools:</label><br>
+            <input type="text" id="projectTools" name="projectTools" required="required" maxlength="100" size="100"><br>
+            <hr size ="10">
+            <input type="submit" value="Add Project">
+          </form>
+        </div>
+      </div>
+      {% endblock %}
+    </body>
 </html>

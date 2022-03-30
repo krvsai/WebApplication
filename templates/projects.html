@@ -1,88 +1,89 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-<head>
+    <head>
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
-  <title>My Project</title>
-  <title>Projects Page</title>
-  <style type="text/css">
-            body{
-                margin: 20px;
-            }
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+        <title>My Project</title>
+        <title>Projects Page</title>
+        <style type="text/css">
+                body{
+                    margin: 20px;
+                }
         </style>
-</head>
-<body>
-{% extends "template.html" %}
-{% block content %}
-
-<h1> Project: </h1>
-<p> project name </p>
-<p> Project contents</p>
-<p> Project tools used</p>
-
- <body>
-        <div class="container">
-            <table class="table table-responsive table-hover table-bordered">
-                <thead>
-                    <tr>
-                        <th>project name</th>
-                        <th>Project details</th>
-                        <th>project tools</th>
-                    </tr>
-                </thead>
-                <tbody id="projects_tbody">
-                </tbody>
-            </table>
-        </div>
+    </head>
+    <body>
 
 
+    {% extends "template.html" %}
+    {% block content %}
 
-        <div id = "projectList">
-          <div id = "projectData"></div>
-        </div>
-        <script>
-          fetch("file:///C:/Users/sweth/PycharmProjects/pyProject/projects.json")
-          .then(function(response){
-          return response.json();
-          })
-          .then(function(data){
-            for(var i=0; i<data.length;i++){
-              document.getElementById("data").innerHTML+=
-              data[i].id + "=>"+data[i].projectName + "; " + data[i].ProjecDetails  + "; " + data[i].projectTools + "<br />";
-              }
-             })
-             .catch(function (err){
-              console.log(err);
-              });
+    <h1> Project: </h1>
+    <p> project name </p>
+    <p> Project contents</p>
+    <p> Project tools used</p>
 
-        </script>
-<script type="text/javascript">
-            $(document).ready(function(){
-                $.ajax({
-                    method: "GET",
-                    url: "file:///C:/Users/sweth/PycharmProjects/pyProject/projects.json",
-                }).done(function(response){
-                    projects_list = response.projects;
-                    for(i = 0; i<projects_list.length; i++){
-                        tr = "<tr>";
-                        tr += "<td>";
-                        tr += projects_list[i]["projectName"];
-                        tr += "</td>";
-                        tr += "<td>";
-                        tr += projects_list[i]["ProjecDetails"];
-                        tr += "</td>";
-                        tr += "<td>";
-                        tr += projects_list[i]["projectTools"];
-                        tr += "</td>";
-                        tr += "<td>";
-                        $("#projects_tbody").append(tr);
-                    }
+     <body>
+            <div class="container">
+                <table class="table table-responsive table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th>project name</th>
+                            <th>Project details</th>
+                            <th>project tools</th>
+                        </tr>
+                    </thead>
+                    <tbody id="projects_tbody">
+                    </tbody>
+                </table>
+            </div>
+
+
+
+            <div id = "projectList">
+              <div id = "projectData"></div>
+            </div>
+            <script>
+              fetch("file:///C:/Users/sweth/PycharmProjects/pyProject/projects.json")
+              .then(function(response){
+              return response.json();
+              })
+              .then(function(data){
+                for(var i=0; i<data.length;i++){
+                  document.getElementById("data").innerHTML+=
+                  data[i].id + "=>"+data[i].projectName + "; " + data[i].ProjectDetails  + "; " + data[i].projectTools + "<br />";
+                  }
+                 })
+                 .catch(function (err){
+                  console.log(err);
+                  });
+
+            </script>
+    <script type="text/javascript">
+                $(document).ready(function(){
+                    $.ajax({
+                        method: "GET",
+                        url: "file:///C:/Users/sweth/PycharmProjects/pyProject/projects.json",
+                    }).done(function(response){
+                        projects_list = response.projects;
+                        for(i = 0; i<projects_list.length; i++){
+                            tr = "<tr>";
+                            tr += "<td>";
+                            tr += projects_list[i]["projectName"];
+                            tr += "</td>";
+                            tr += "<td>";
+                            tr += projects_list[i]["ProjectDetails"];
+                            tr += "</td>";
+                            tr += "<td>";
+                            tr += projects_list[i]["projectTools"];
+                            tr += "</td>";
+                            tr += "<td>";
+                            $("#projects_tbody").append(tr);
+                        }
+                    });
                 });
-            });
-        </script>
+            </script>
 
-{% endblock %}
-</body>
+    {% endblock %}
+    </body>
 </html>
