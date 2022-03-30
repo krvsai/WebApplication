@@ -38,34 +38,39 @@
                 </table>
             </div>
 
-
-
             <div id = "projectList">
               <div id = "projectData"></div>
             </div>
-            <script>
-              fetch("file:///C:/Users/sweth/PycharmProjects/pyProject/projects.json")
-              .then(function(response){
-              return response.json();
-              })
-              .then(function(data){
-                for(var i=0; i<data.length;i++){
-                  document.getElementById("data").innerHTML+=
-                  data[i].id + "=>"+data[i].projectName + "; " + data[i].ProjectDetails  + "; " + data[i].projectTools + "<br />";
-                  }
-                 })
-                 .catch(function (err){
-                  console.log(err);
-                  });
-
-            </script>
-    <script type="text/javascript">
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+            <script type="text/javascript">
                 $(document).ready(function(){
                     $.ajax({
                         method: "GET",
-                        url: "file:///C:/Users/sweth/PycharmProjects/pyProject/projects.json",
+                        url: ".../projects.json",
                     }).done(function(response){
                         projects_list = response.projects;
+                        for(i = 0; i<projects_list.length; i++){
+                            tr = "<tr>";
+                            tr += "<td>";
+                            tr += projects_list[i]["projectName"];
+                            tr += "</td>";
+                            tr += "<td>";
+                            tr += projects_list[i]["ProjectDetails"];
+                            tr += "</td>";
+                            tr += "<td>";
+                            tr += projects_list[i]["projectTools"];
+                            tr += "</td>";
+                            tr += "<td>";
+                            $("#projects_tbody").append(tr);
+                        }
+                    });
+                });
+            </script>
+
+            <script type="text/javascript">
+                $(document).ready(function(){
+                done(function(response){
+                        projects_list = [{"projectName": "fhjgh",  "ProjectDetails": "uhkj",  "projectTools": "khkj" },{"projectName": "fhjgh",  "ProjectDetails": "uhkj",  "projectTools": "khkj" }]
                         for(i = 0; i<projects_list.length; i++){
                             tr = "<tr>";
                             tr += "<td>";
