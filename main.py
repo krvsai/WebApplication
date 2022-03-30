@@ -22,6 +22,9 @@ app = Flask(__name__)
 
 
 @app.route("/")
+def index():
+    return render_template("index.html")
+@app.route("/shortInto")
 def shortInto():
     return render_template("shortInto.html")
 @app.route("/skillset")
