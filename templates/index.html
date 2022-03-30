@@ -1,64 +1,31 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-<head>
-  <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
-  <title>Home Page</title>
-  <style>
-*{
-  box-sizing: border-box;
-}
-
-/* Create two equal columns that floats next to each other */
-.leftNav {
-  float: left;
-  width: 30%;
-  padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
-
-.rightProfile {
-  float: right;
-  width: 70%;
-  padding: 100px;
-  height: 3000px; /* Should be removed. Only for demonstration */
-}
+  <head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home Page</title>
+  </head>
+  <body>
+    {% extends "template.html" %}
+    {% block content %}
+    <h2>Please click on the links to view those pages</h2>
+    {% endblock %}
 
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-</style>
-</head>
-<body>
-{% extends "template.html" %}
-{% block content %}
-
-<h1> Profile </h1>
-<p> Name: Koti Reddy Venkata, Sai Sriharsha </p>
-
-
-<h2>Profile in detail</h2>
-
-<div class="row">
-  <div class="leftNav" style="background-color:#aaa;">
-    <figure>
-      <img src="templates/image.png" alt="profImage" width="1200" height="470">
-      <img src="TigerJPG.jpg" >
-    </figure>
-
-    <h2>Contents</h2>
-    <p>details</p>
-  </div>
-  <div class="rightProfile" style="background-color:#bbb;">
-    <h2>Profile</h2>
-    <p>more details</p>
-  </div>
-</div>
-{% endblock %}
-</body>
+    <header>
+      <div class="container">
+        <h1 class="logo">Professional Website</h1>
+        <strong><nav>
+          <ul class="menu">
+            <li><a href="{{ url_for('shortInto') }}">Short Introduction</a></li>
+            <li><a href="{{ url_for('skillset') }}">Skill set</a></li>
+            <li><a href="{{ url_for('education') }}">Education</a></li>
+            <li><a href="{{ url_for('projects') }}">Projects</a></li>
+            <li><a href="{{ url_for('addProject') }}">Add Project</a></li>
+          </ul>
+        </nav></strong>
+      </div>
+    </header>
+  </body>
 </html>
