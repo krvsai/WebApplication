@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+     <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+ <meta charset="UTF-8">
+    <title>Added Project Successfully</title>
+
+  <link rel="stylesheet" href="{{ url_for('static',    filename='css/template.css') }}">
+  <style>
+      body {
+          background-image: url('.../static/image.png');
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: 100% 100%;
+      }
+    </style>
+
+
+</head>
+<body>
+
+    {% extends "template.html" %}
+    {% block content %}
+<h1>Message sent successfully</h1>
+ {% endblock %}
+</body>
+</html>

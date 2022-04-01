@@ -31,7 +31,7 @@
       <h1> Add a new project </h1>
       <div class="row">
         <div class="addProject" style="background-color:#aaa;">
-          <form action = "/addproject.py" method = "get">
+          <form  method = "post">
             <label for="projectName">Project Name:</label><br>
             <input type="text" id="projectName" name="projectName" required="required" maxlength="50" size="50"><br>
             <label for="projectDetails">Project Details:</label><br>
@@ -39,7 +39,7 @@
             <label for="projectDetails">Project Tools:</label><br>
             <input type="text" id="projectTools" name="projectTools" required="required" maxlength="100" size="100"><br>
             <hr size ="10">
-            <input type="submit" value="Add Project">
+            <input type="submit" value="Add Project" >
           </form>
         </div>
       </div>

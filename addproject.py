@@ -4,23 +4,26 @@ from jsonAppend import *
 
 # add method to pass parameters retrieved from addProject.html page to jsonAppend.py to
 # append the new project details into the project.json file.
-def projectName():
-    return request.form['newprojectname']
+def projectname():
+    return request.form['projectName']
     #return "name"
 
-def projectDetails():
-    return request.form['newprojectdetails']
+
+def projectdetails():
+    return request.form['projectDetails']
     #return "Details"
 
-def projectTools():
-    return request.form['newprojectTools']
+
+def projecttools():
+    return request.form['projectTools']
     #return "tools"
+
 
 def addnewproject():
     return {
-                "projectName": projectName(),
-                "ProjectDetails": projectDetails(),
-                "projectTools": projectTools()
+                "projectName": projectname(),
+                "ProjectDetails": projectdetails(),
+                "projectTools": projecttools()
             }
 
-write_json(addnewproject())
+

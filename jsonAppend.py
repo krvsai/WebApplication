@@ -2,9 +2,11 @@
 # JSON
 import json
 #from addproject import *
+#from addproject import *
 
 # function to add to JSON
-def write_json(new_data, jsonfile='projects.json'):
+def write_json(new_data):
+    jsonfile = 'projects.json'
     with open(jsonfile, 'r+') as file:
         # First we load existing data into a dict.
         file_data = json.load(file)

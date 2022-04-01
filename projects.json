@@ -1,24 +1,19 @@
 {
     "projects": [
         {
-            "projectName": "fhjgh",
-            "ProjectDetails": "uhkj",
-            "projectTools": "khkj"
+            "projectName": "Springboot MS",
+            "ProjectDetails": "Developed micro services using spring boot",
+            "projectTools": "Java, Spring Boot, AWS"
         },
         {
-            "projectName": "fhjgh",
-            "ProjectDetails": "uhkj",
-            "projectTools": "khkj"
+            "projectName": "Migration project",
+            "ProjectDetails": "Converted a monolithic app to micro services architecture using Spring Boot using 12-factor app methodology",
+            "projectTools": "Java, Spring Boot, Data JPA, Oracle, Jenkins"
         },
         {
-            "projectName": "fhjgh",
-            "ProjectDetails": "uhkj",
-            "projectTools": "khkj"
-        },
-        {
-            "projectName": "fhjgh",
-            "ProjectDetails": "uhkj",
-            "projectTools": "khkj"
+            "projectName": "Restful Services",
+            "ProjectDetails": "Built Java Web applications with technology stack includes Java, JavaScript, HTML5, CSS3, Spring Framework, Unix, SQL, Hibernate and RESTful and SOAP web services",
+            "projectTools": "Java, Spring MVC, Hibernate, AngularJS, Jenkins, REST"
         }
     ]
 }
