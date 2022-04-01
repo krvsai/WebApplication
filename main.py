@@ -18,7 +18,7 @@ logging.basicConfig(level=logging.DEBUG)
 
 # using flask_restful
 # creating the flask app
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates')
 # creating an API object
 api = Api(app)
 
